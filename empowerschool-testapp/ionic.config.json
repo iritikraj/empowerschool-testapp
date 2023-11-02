@@ -1,0 +1,7 @@
+{
+  "name": "empowerschool-testapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

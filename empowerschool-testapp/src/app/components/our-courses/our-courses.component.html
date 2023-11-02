@@ -1,0 +1,27 @@
+<!-- Note:-  this is a dummy template & in live project we can read data from api and use for loop to show multiple cards -->
+<div *ngFor="let course of courses" id="our-courses" routerLink="/progress">
+  <ion-grid class="ion-margin ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="card">
+          <ion-card-header class="ion-no-padding">
+            <ion-item lines="none" class="">
+              <ion-button slot="end" fill="clear" color="light" size="large" class="ion-no-padding" mode="ios">
+                <ion-icon name="ellipsis-vertical"></ion-icon>
+              </ion-button>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-card-title>{{course.name}}</ion-card-title>
+            </ion-list>
+            <ion-chip class="ion-no-margin" color="primary">{{course.category}}</ion-chip>
+            <ion-item lines="none" class="progressbar">
+              <ion-progress-bar value="{{course.progress}}" color="primary"></ion-progress-bar><p>{{course.percentageCompleted}}</p>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

@@ -1,0 +1,20 @@
+ion-item.item-border {
+  border-radius: 5px;
+  border: 2px solid grey;
+
+  ion-searchbar {
+    --box-shadow: 0;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
+  }
+}
+
+ion-item.item-margin {
+  margin: 5px 15px 5px 15px;
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+}

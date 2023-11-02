@@ -1,0 +1,26 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="courses" href="/tabs/courses">
+      <ion-icon aria-hidden="true" name="school"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button id="opens-toast">
+      <ion-icon aria-hidden="true" name="speedometer"></ion-icon>
+      <ion-toast trigger="opens-toast" message="Coming soon" [duration]="1000"></ion-toast>
+    </ion-tab-button>
+
+    <ion-tab-button tab="chat" href="/tabs/chat">
+      <ion-icon aria-hidden="true" name="chatbubbles-sharp"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notifications" href="/tabs/notifications">
+      <ion-icon aria-hidden="true" name="notifications-sharp"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button id="open-toast">
+      <ion-icon aria-hidden="true" name="ellipsis-horizontal"></ion-icon>
+      <ion-toast trigger="open-toast" message="Coming soon" [duration]="1000"></ion-toast>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

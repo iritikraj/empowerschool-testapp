@@ -1,0 +1,45 @@
+.segmentDiv {
+  overflow: auto;
+
+  ion-segment {
+    ion-segment-button {
+      ion-label {
+        text-transform: none;
+      }
+    }
+  }
+}
+
+ion-avatar {
+  height: 70px !important;
+  width: 70px !important;
+}
+
+ion-list {
+  width: -webkit-fill-available;
+}
+
+ion-avatar {
+  --border-radius: 4px;
+}
+
+.progressbar {
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+
+  ion-progress-bar {
+    margin: 0px 10px;
+    border-radius: 10px;
+  }
+}
+
+.videoPlayer {
+  height: 30%;
+  width: 100%;
+  padding: 18px;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
