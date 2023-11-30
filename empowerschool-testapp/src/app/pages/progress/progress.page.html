@@ -1,56 +1,120 @@
-<ion-header [translucent]="true" class="ion-no-border" mode="md">
-  <ion-toolbar>
-    <ion-buttons slot="start" class="ion-no-margin">
-      <ion-back-button slot="start" defaultHref="/tabs/courses" text="" icon="arrow-back-outline"></ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="cloud-download-sharp"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon name="information-circle-sharp"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-
-  <ion-item lines="none">
-    <ion-avatar slot="start">
-      <img alt="colorfulpicture"
-        src="https://images.unsplash.com/photo-1535911062114-764574491173?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dW1icmVsbGF8ZW58MHx8MHx8fDA%3D" />
-    </ion-avatar>
-    <ion-list lines="full">
-      <ion-item lines="none">
-        <ion-label>Celebrating Cultures</ion-label>
-      </ion-item>
-      <ion-item lines="none" class="progressbar">
-        <ion-progress-bar value=".27" color="primary"></ion-progress-bar>
-        <p>27%</p>
-      </ion-item>
-    </ion-list>
-  </ion-item>
-
-
-  <div class="segmentDiv">
-    <ion-segment no-padding scrollable="true" mode="md" value="course">
-      <ion-segment-button value="course">
-        <ion-label>Course</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="participants">
-        <ion-label>Participants</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="grades">
-        <ion-label>Grades</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </div>
-
-  <div class="videoPlayer">
-    <iframe width="380" height="300"
-      src="https://www.youtube-nocookie.com/embed/jmYRdNHK4Ck?si=Zz_BGnlppA_2pabv&amp;controls=0" title="Player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-</ion-content>
+<ion-menu side="end" contentId="main-content">
+  <ion-content class="menu">
+    <ion-row>
+      <div class="web-header">
+        <ion-menu-toggle>
+          <ion-button size="small" color="light" shape="round" class="ion-no-padding ion-no-margin" mode="ios">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+      </div>
+      <ion-col size="12" class="ion-no-padding">
+        <ion-img
+          src="https://images.unsplash.com/photo-1479030160180-b1860951d696?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+          class="bg-img" alt="Post Image"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-item lines="none">
+      <ion-text>Celebrating Cultures</ion-text>
+    </ion-item>
+    <ion-chip color="primary">Securely and Environment</ion-chip>
+    <div class="progressbar">
+      <ion-progress-bar value=".27" color="primary"></ion-progress-bar>
+      <p>27%</p>
+    </div>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header [translucent]="true" class="ion-no-border" mode="md">
+    <ion-toolbar>
+      <ion-buttons slot="start" class="ion-no-margin">
+        <ion-back-button slot="start" defaultHref="/tabs/courses" text="" icon="arrow-back-outline"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon name="cloud-download-sharp"></ion-icon>
+        </ion-button>
+        <ion-button>
+          <ion-icon name="information-circle-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [fullscreen]="true">
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img alt="colorfulpicture"
+          src="https://images.unsplash.com/photo-1535911062114-764574491173?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dW1icmVsbGF8ZW58MHx8MHx8fDA%3D" />
+      </ion-avatar>
+      <ion-list lines="full">
+        <ion-item lines="none">
+          <ion-label>Celebrating Cultures</ion-label>
+        </ion-item>
+        <ion-item lines="none" class="progressbar">
+          <ion-progress-bar value=".27" color="primary"></ion-progress-bar>
+          <p>27%</p>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+    <div class="segmentDiv">
+      <ion-segment [(ngModel)]="segment" scrollable="true" mode="md" value="course">
+        <ion-segment-button value="course">
+          <ion-label>Course</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="participants">
+          <ion-label>Participants</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="grades">
+          <ion-label>Grades</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div [ngSwitch]="segment">
+      <ion-card *ngSwitchCase="'course'" class="ion-no-margin ion-no-padding" mode="ios">
+        <ion-card-content class="ion-no-padding">
+          <div class="videoPlayer">
+            <iframe width="380" height="300"
+              src="https://www.youtube-nocookie.com/embed/jmYRdNHK4Ck?si=Zz_BGnlppA_2pabv&amp;controls=0" title="Player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngSwitchCase="'participants'" class="ion-no-margin ion-no-padding">
+        <ion-card-content class="ion-no-padding">
+          <ion-card-header>
+            Hi
+          </ion-card-header>
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngSwitchCase="'grades'" class="ion-no-margin ion-no-padding">
+        <ion-card-content class="ion-no-padding">
+          <ion-card-header>
+            99/100 Grades
+          </ion-card-header>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button size="small">
+        <ion-icon name="list-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="start">
+        <ion-fab-button>
+          <ion-icon name="document"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="help-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+    <ion-fab class="vertical-center" vertical="center" horizontal="end" slot="fixed">
+      <ion-menu-toggle>
+        <ion-fab-button>
+          <ion-icon name="chevron-back"></ion-icon>
+        </ion-fab-button>
+      </ion-menu-toggle>
+    </ion-fab>
+  </ion-content>
+</div>

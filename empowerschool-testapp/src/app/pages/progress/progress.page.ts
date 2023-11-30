@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress.page.scss'],
 })
 export class ProgressPage implements OnInit {
-
-  constructor() { }
+  segment: string | undefined;
+  constructor() { 
+    this.segment = "course";
+  }
 
   ngOnInit() {
   }

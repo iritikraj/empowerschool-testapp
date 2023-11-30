@@ -43,3 +43,75 @@ ion-avatar {
     height: 100%;
   }
 }
+
+ion-fab-button {
+  --background: #ebedeb;
+  --color: black;
+}
+
+
+ion-menu {
+  ion-content.menu {
+    .bg-img {
+      height: 35vh;
+      object-fit: cover;
+    }
+
+    ion-item ion-label {
+      letter-spacing: 1px;
+    }
+  }
+}
+
+ion-menu::part(container) {
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
+}
+
+#post-segment {
+  position: absolute;
+  width: 100%;
+  top: -10px;
+
+  .content {
+    background-color: #fff;
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+.web-header {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+
+  ion-button {
+    top: 5px;
+    position: absolute;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white !important;
+  }
+}
+
+.progressbar {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  ion-progress-bar {
+    border-radius: 10px;
+    min-height: 6px;
+  }
+}
+
+.vertical-center {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin-right: -25px; /* Half of the width to make it half visible */
+}
